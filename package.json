@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon src/main.ts",
     "start": "tsc & node dist/src/main.js",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier --write 'src/**/*.{ts,tsx}'"
   },
   "keywords": [],
   "author": "Nelson Eduardo Arevalo Cubides",
@@ -28,6 +30,9 @@
     "@types/graphql": "^14.5.0",
     "@types/node": "^22.0.0",
     "@types/typescript": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^9.8.0",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"

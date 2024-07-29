@@ -1,0 +1,30 @@
+name: Validate Code (Feature)
+
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.13.1'
+
+      - name: Install pnpm
+        run: npm install --global pnpm
+
+      - name: Install dependiencies
+        run: pnpm install
+
+      - name: Lint Code
+        run: pnpm run lint
+
+      - name: Format Code
+        run: pnpm run format
