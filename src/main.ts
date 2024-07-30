@@ -2,7 +2,7 @@ import express from 'express'
 import * as dotenv from 'dotenv'
 import { ApolloServer } from 'apollo-server-express';
 /** Interfaces & Types */
-import type { Express } from 'express'
+import type { Application } from 'express'
 /** Config */
 import { appDataSource } from './config/database';
 /** Graphql Modules */
@@ -11,7 +11,7 @@ import { resolversDefs } from './app/resolvers'
 
 dotenv.config();
 
-const app: Express = express();
+const app: Application = express();
 const port: number = parseInt(process.env.EXPRESS_PORT ?? '0');
 const server = new ApolloServer({ 
     typeDefs: typesDefs,
